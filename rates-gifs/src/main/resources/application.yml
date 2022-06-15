@@ -1,0 +1,26 @@
+oxr:
+  url:
+    api: https://openexchangerates.org/api
+    historical: historical/:date.json
+    latest: latest.json
+  id: 1d757a1ce11c4e0cbc508e0854112f78
+  base: USD
+  symbol: RUB
+  timespan: 2
+
+giphy:
+  url:
+    api: https://api.giphy.com/v1/gifs
+  id: 8mai4nZttJ2k96CMB1Ms5wIcNBvx83os
+  type: random
+  rating: pg-13
+
+local:
+  url:
+    start: http://localhost:8080/
+    root: /
+    fetch: /fetch
+    redirect-to-fetch: redirect:/fetch/oxr
+
+app:
+  mode: auto

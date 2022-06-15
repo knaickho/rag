@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rate Request</title>
+</head>
+<body>
+<!---добавить action,  th:object="${request}" object--->
+<!--добавить формы для валют. По умолчанию usd/rub-->
+    <form method="POST">
+        <div class="grid">
+            <div>
+                <!--придумать нормальную подпись-->
+                <h4>Choose older date:</h4>
+                <!--добавить action, object, значение по умолчанию = вчера-->
+                <input id="olderdate" type="date" value="olderdate">
+                </br>
+            </div>
+            <div>
+                <!--придумать нормальную подпись-->
+                <h4>Choose newer date:</h4>
+                <!---добавить action, object, значение по умолчанию = сегодня-->
+                <input id="newerdate" type="date" value="newerdate">
+            </div>
+            <br>
+            <div id="base">
+                <select>
+                    <option value="0"><b>Select base currency</b></option>
+                    <option th:each="currency : ${baseCurrency}"
+                            th:value="${currency.symbol}"
+                            th:text="${currency.name}"></option>
+                </select>
+            </div>
+            <br>
+            <div id="quotes">
+                <h4>Pick quote currencies</h4>
+                <div th:each="currency : ${quoteCurrencies}">
+                    <input th:field="*{quoteCurrencies}" type="checkbox"
+                           th:value="${currency.symbol}"/>
+                    <span th:text="${currency.name}">CURRENCY</span><br/>
+                </div>
+            </div>
+            <div>
+                <!--придумать нормальную подпись-->
+                <button>Go</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
