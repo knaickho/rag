@@ -3,7 +3,7 @@ oxr:
     api: https://openexchangerates.org/api
     historical: historical/:date.json
     latest: latest.json
-  id: 1d757a1ce11c4e0cbc508e0854112f78
+  id: 8dfd323903c44132906629bdc59a7da2
   base: USD
   symbol: RUB
   timespan: 2
@@ -11,7 +11,7 @@ oxr:
 giphy:
   url:
     api: https://api.giphy.com/v1/gifs
-  id: 8mai4nZttJ2k96CMB1Ms5wIcNBvx83os
+  id: V3cOV6JJr9bZFx4DvyLt8f0e7WLrBzIb
   type: random
   rating: pg-13
 
